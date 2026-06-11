@@ -24,18 +24,7 @@ The model combines biological allometries, mortality processes, sexual reproduct
 
 The population density $n(t,s)$ evolves according to
 
-$$
-\frac{\partial n}{\partial t}
-+
-\frac{\partial}{\partial s}
-\left(
-\rho(s)n
-\right)
-=
-\left[\mu(s)-\delta(s)-\beta(s)\right]n
--
-\frac{n^2}{K(s)}
-$$
+$\frac{\partial n}{\partial t}+\frac{\partial}{\partial s}\left(\rho(s)n\right)=\left[\mu(s)-\delta(s)-\beta(s)\right]n-\frac{n^2}{K(s)}$
 
 where:
 
@@ -98,16 +87,7 @@ The code automatically evaluates the Courant–Friedrichs–Lewy (CFL) condition
 
 To validate the numerical solution, the model also integrates the characteristic equation
 
-$$
-\frac{dn}{ds}
-=
-\frac{
-(\mu(s)-\delta(s)-\beta(s))\,n
--
-n^2/K(s)
-}
-{\rho(s)}
-$$
+$\frac{dn}{ds}=\frac{(\mu(s)-\delta(s)-\beta(s))n-n^2/K(s)}{\rho(s)}$
 
 using SciPy's implicit Radau solver.
 
